@@ -1,0 +1,174 @@
+     URL rewritting:-
+     _________________ 
+  
+     => it allow to send data from one page to another page by rewriting data on url.
+
+     => there are 4 ways to imlement url rewrtting.
+     1. Query String
+     2. Hidden Field(<input type=hidden>)
+     3.session hadling
+     4. cookie
+   
+     Redirect control on next page :--
+     ___________________________________
+   
+     response.sendRedirect("page name");
+	 
+	 1.Query String:--
+	 __________________________
+	 
+	 => it is used to send data using varriable from 1 page to another page,when we are re directing page or creatimg link
+
+
+    <input type=hidden>:---
+     _______________________
+  
+     => using hidden field we can send data from one page to another page but here it is mendatory that hidden field are written inside form tag.
+
+     Session Handling:--
+	 _____________________
+     
+	 => session is just like a global varriable that contains a value and this value can be accessed anywhere in web application.
+	 
+	 in httpservlet javax.servlet.http.HttpSession interface is used for session handling.
+	 
+	 	 note--- session and coockies can be implemented in httpservlet
+	 
+	 creating session--
+	 _________________
+	 
+	  HttpSession session=request.getSession();
+	  
+	  adding value in session--
+	  __________________________
+	  
+	  session.putValue("sessionVarriable",<value>); // depricated
+	  or
+	  session.setAttribute("sessionVarriable",<value>);
+	  
+	  get value from session--
+	  __________________________
+	  
+	  
+	  session.getValue("sessionVarriable");// depricated
+	  or
+	  session.getAttribute("sessionVarriable");
+	  
+	  updating session----
+	  _____________________
+	  
+	   session.putValue("oldsessionVarriable",<value>); // depricated
+	   or
+	   session.setAttribute("OldsessionVarriable",<value>);
+	   
+	   deleting session---
+	   __________________
+
+	  session.putValue("oldsessionVarriable",null);
+	  or
+	  session.removeAttribute("oldsessionVarriable");
+	  or
+	  session.setAttribute("OldsessionVarriable",null);
+
+	  cookie---
+	  _________________
+	  
+	  
+	  it isn also just like a global varriable that contains a value and this value can be accessed anyehere in the  web application 
+	   there is a basic diffrence between session and cookie that a session stores  value on server side and cokie stores on client side
+	   
+	   tow types 
+	   
+	   1.insession/inmemory--
+	   _____________________
+	   
+	   this type co0kie is similiar to session which automatacally dleted when web application closed
+	   
+	   2. inpersisstent cookie--
+	   ___________________________________
+	   
+	   this type cookie can be stored for a specific time using
+	    setMaxAge(int second)
+	 we can assign the age of cookie after specific time cookie deleted automatically
+	 
+	 javax.servlet.http.cookie class
+	 
+	 
+	 object creation---
+	 _______________________
+	 
+	 
+	 cookie ck1 = new cookie("user","analyze");
+	 	 cookie ck2 = new cookie("city","lko
+		 ck1.setMaxAge(60*60*24830);// 30 days cookie
+		 
+		 response.addCookie(ck1);
+		 
+
+
+RequestDispatcher calss--
+_____________________
+
+   this is a class define in javax.servlet.http paclkage
+   
+   => it is used to redirect control on specific page just like sendRedirect()
+   => contains 2 methods
+   => include() and farword()
+   
+   include()---
+   ____________
+   
+   =>  it shows intermediate page on url and display the content of intermediate page and included page.
+   
+   RequestDispatcher rd1=new RequestDispatcher("page2");
+   rd1.include(request,Response);
+   
+   
+   farword()--
+   ____________
+   
+   => it shows the name of intermediate page on url and  content of farworded page only
+   
+    
+   RequestDispatcher rd1=new RequestDispatcher("page3");
+   rd1.farword(request,Response);
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+
+
+
+
+
+
+
+
+
+
+
+

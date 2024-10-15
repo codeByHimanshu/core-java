@@ -1,0 +1,103 @@
+java server page(JSP):
+_______________________
+
+=> jsp is server side svripting language or tag based language.
+
+=> jsp file consist .jsp extension and it can have html ,css ,java script,text and java code.
+
+=> jsp page always exists in page holder of project
+
+=> jsp page always converted into web servlet by web container.
+
+
+Execution of jsp----
+_____________________
+
+ABC.jsp(jsp file)=>ABC.class(Byteode)=> Machine code and excution
+
+
+advantage of jsp over servlet--
+_______________________________
+
+=>designing in servlet is difficult because html and css code always written in out.println
+  in jsp page html and css code can be written normaly
+  
+=> in first time the jsp program execution should be slow and next time the excution of jsp program 
+    should be faster than servlet progarm execution
+	
+=>  a servlet progarms based on class and object architecture while jsp files does not it
+
+=> aservlet need to create object of each interface and class while jsp support implicit object of following interface and class.
+
+HttpServletRequest request;
+HttpServletRequest response;
+HttpServletRequest session;
+Cookie Cookie;
+Page page;
+PrintWriter out;
+ServletConf config;
+
+
+JSP Tags--
+_____________________
+  
+  as we know that scripting language are based on Tags and jsp tags are listed
+  
+  1. JSP comment              <%--      --%>
+  2.Directive tag             <%@page     %>
+  3.declearative tag          <%!         %>
+  4.scriptlet Tag             <%          %>
+  5.Expression tag/TagLib     <%=         %>
+  6.implicit object (request,response,page,out,session,cookie,config)
+  
+   1. JSP comment              <%--      --%>--
+   ___________________________________________
+   
+   =>it is used to conver a code non executable
+   
+   
+   
+   2.Directive tag             <%@page     %>--
+   ___________________________________________
+   
+   => it isused to import a package or include a file
+      
+	  <%@page   import="java.util.*" language='java' %>
+	  
+  3.declearative tag          <%!         %>--
+  ___________________________________________
+  => used to declere varriable and function and this varriable and function can be call anywhere in curren jsp.
+  
+  <%!  String cname="himanshu;" 
+  function show ()
+  {
+  for (int i=0;i<10;i{
+  }
+  
+  }
+                %>
+				
+				
+				
+  4.scriptlet Tag             <%          %>---
+____________________________________________
+
+it can have valid java statement
+
+  <%
+  out.println("company name",+cnmae);
+  show()
+  
+  %>
+  
+  
+  
+    5.Expression tag/TagLib     <%=         %>
+	__________________________________________	  
+   
+   
+                it is used to execute a valid statement of java and prints its result
+
+  
+__
+	
